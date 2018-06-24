@@ -29,6 +29,6 @@ end
 
 figure(2); clf;
 plot(x_train, y_train, 'bx', x_test, y_test, 'rx');
-grid on;
+grid on; legend('Training data', 'Test data');
 
 save regression_data x_train y_train x_test y_test

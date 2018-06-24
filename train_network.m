@@ -5,7 +5,7 @@ load regression_data;
 % Number of inputs to the NN:
 n_inputs = 1;
 % Number of units in each layer (NB for single output, n_units(end) should be 1):
-n_units = [3, 4, 1];
+n_units = [5, 1, 5, 1];
 % Total number of layers:
 n_layers = numel(n_units);
 
@@ -35,11 +35,13 @@ deltas      = initialise_units(n_units);
 % grid on;
 
 % accumulate gradients for each data point
-for i = 1:numel(x_train)
+for i = 1:4%numel(x_train)
     x = x_train(i);
     target = y_train(i);
     % Evaluate network predictions
     [ y, activations ] = forwardprop( x, weights, activations );
     % Backpropogate deltas through the network
     [ deltas ] = backprop( y, target, weights, deltas, activations );
+%     celldisp(deltas);
+    [ gradients ] = eval_gradients( deltas, activations, weights, input, gradients );
 end

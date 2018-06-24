@@ -8,7 +8,7 @@ activations{1} = weights{1} * [input; 1];
 
 % Activations of intermediate hidden layers with tanh activation functions
 for i = 2:length(weights)
-    activations{i} = weights{i} * tanh([activations{i-1}; 1]);
+    activations{i} = weights{i} * [tanh(activations{i-1}); 1];
 end
 
 % For regression:
