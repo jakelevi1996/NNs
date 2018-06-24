@@ -1,8 +1,10 @@
 n_points = 100;
 train_ratio = 0.75;
 
-x = linspace(0.3, 2.8, n_points);
-y = sin(2*pi*x) + .1*exp(x);
+% x = linspace(0.3, 2.8, n_points);
+% y = sin(2*pi*x) + .1*exp(x);
+x = linspace(-1,1);
+y = x.^2;
 
 % figure(1); clf;
 % plot(x, y);
@@ -25,8 +27,8 @@ while (numel(x_train) > n_points*train_ratio)
     y_train(ind) = [];
 end
 
-% figure(2); clf;
-% plot(x_train, y_train, 'bx', x_test, y_test, 'rx');
-% grid on;
+figure(2); clf;
+plot(x_train, y_train, 'bx', x_test, y_test, 'rx');
+grid on;
 
 save regression_data x_train y_train x_test y_test
