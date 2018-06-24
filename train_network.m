@@ -1,7 +1,7 @@
 % Parameters
 % Number of inputs to the NN:
 n_inputs = 1;
-% Number of units in each layer:
+% Number of units in each layer (NB for single output, n_units(end) should be 1):
 n_units = [3, 1];
 % Total number of layers:
 n_layers = numel(n_units);
@@ -22,5 +22,18 @@ for i = 1:n_layers
 end
 
 
-celldisp(weights);
-celldisp(activations);
+% celldisp(weights);
+% celldisp(activations);
+% 
+% x = linspace(-20, 20);
+% y = zeros(size(x));
+% 
+% % Evaluate network
+% for i = 1:numel(x)
+%     [ y(i), ~ ] = forwardprop( x(i), weights, activations );
+% end
+% 
+% % figure(1);
+% clf;
+% plot(x,y);
+% grid on;
