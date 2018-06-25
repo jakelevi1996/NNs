@@ -9,10 +9,10 @@ gradients{1} = deltas{1} * [input', 1];
 
 
 for i = 2:length(deltas)
-    gradients{i} = deltas{i} * [activations{i-1}', 1];
+    gradients{i} = deltas{i} * [tanh(activations{i-1}'), 1];
 end
 
-celldisp(gradients);
+% celldisp(gradients);
 
 
 end

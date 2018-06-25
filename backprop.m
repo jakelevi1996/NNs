@@ -14,8 +14,8 @@ deltas{end} = output - target;
 
 % Backpropogate deltas through the network
 for i = (length(deltas)-1) : -1 : 1
-    deltas{i} =	(weights{i+1}(:, 1:end-1)'*deltas{i+1}) ...
-                ./ (sech(activations{i}).^2);
+    deltas{i} =	((weights{i+1}(:, 1:end-1))' * deltas{i+1}) ...
+                .* (sech(activations{i}).^2);
 end
 
 end

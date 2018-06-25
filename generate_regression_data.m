@@ -5,6 +5,7 @@ train_ratio = 0.75;
 % y = sin(2*pi*x) + .1*exp(x);
 x = linspace(-1,1);
 y = x.^2;
+% y = abs(x);
 
 % figure(1); clf;
 % plot(x, y);
